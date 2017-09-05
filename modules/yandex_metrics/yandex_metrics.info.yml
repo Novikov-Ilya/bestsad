@@ -1,0 +1,13 @@
+name: 'Yandex.Metrics Counter'
+type: module
+description: 'Allows to install Yandex.Metrics counter on the site pages.'
+package: Yandex.Metrics
+# version: VERSION
+# core: 8.x
+configure: yandex_metrics.default
+
+# Information added by Drupal.org packaging script on 2015-03-15
+version: '8.x-2.x-dev'
+core: '8.x'
+project: 'yandex_metrics'
+datestamp: 1426449492

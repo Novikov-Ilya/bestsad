@@ -1,0 +1,94 @@
+<?php
+/**
+ * @file
+ * comment_notify.install.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function comment_notify_install() {
+  // Create entries for existing comments.
+  $comments_select = db_select('comment_field_data', 'c');
+  $comments_select->join('users_field_data', 'u', 'c.uid = u.uid');
+  $comments_select->addField('c', 'cid');
+  $comments_select->addExpression('0', 'notify');
+  // Mix in a random string to all values.
+  $salt = uniqid(mt_rand(), TRUE);
+  if (db_driver() == 'pgsql') {
+    $comments_select->addExpression("MD5(:salt || c.mail || COALESCE(u.mail, u.init) || c.uid || c.name || c.entity_id || c.hostname || c.cid)", 'notify_hash', array(':salt' => $salt));
+  }
+  else {
+    $comments_select->addExpression("MD5(CONCAT_WS('', :salt, c.mail, COALESCE(u.mail, u.init), c.uid, c.name, c.entity_id, c.hostname, c.cid))", 'notify_hash', array(':salt' => $salt));
+  }
+  db_insert('comment_notify')->from($comments_select)->execute();
+
+  // Set module weight low so that other modules act on the comment first.
+  module_set_weight('comment_notify', 10);
+}
+
+/**
+ * Implements hook_schema().
+ */
+function comment_notify_schema() {
+  $schema['comment_notify'] = array(
+    'description' => t('Stores information about which commenters on the site have subscriped to followup emails.'),
+    'fields' => array(
+      'cid' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'description' => 'The comment id from {comments}.cid',
+        'not null' => TRUE,
+        'disp-width' => '11'),
+      'notify' => array(
+        'type' => 'int',
+        'description' => 'An integer indicating the type of subscription: 0 means not subscribed, 1 means subscribed to all comments, and 2 means only subscribed to replies of this comment.',
+        'size' => 'tiny',
+        'not null' => TRUE,
+        'disp-width' => '11'),
+      'notify_hash' => array(
+        'type' => 'varchar',
+        'description' => 'A hash of unique information about the commenter.  Used for unsubscribing users.',
+        'length' => '128',
+        'not null' => TRUE,
+        'default' => ''),
+      'notified' => array(
+        'type' => 'int',
+        'description' => 'A boolean indicator for whether or not a notification for the comment has been sent: 1 means yes, 0 means no.',
+        'size' => 'tiny',
+        'not null' => TRUE,
+        'default' => 0,
+        'disp-width' => '11'),
+    ),
+    'primary key' => array('cid'),
+    'indexes' => array(
+      'notify_hash' => array('notify_hash')),
+  );
+  $schema['comment_notify_user_settings'] = array(
+    'fields' => array(
+        'uid' => array(
+          'type' => 'int',
+          'unsigned' => TRUE,
+          'description' => 'The user id from {users}.cid',
+          'not null' => TRUE,
+          'disp-width' => '11'),
+        'node_notify' => array(
+          'type' => 'int',
+          'description' => 'An integer indicating the default type of subscription: 0 means not subscribed, 1 means subscribed to all comments, and 2 means only subscribed to replies of this comment.',
+          'size' => 'tiny',
+          'not null' => TRUE,
+          'default' => 0,
+          'disp-width' => '11'),
+        'comment_notify' => array(
+          'type' => 'int',
+          'description' => 'An integer indicating the default type of subscription: 0 means not subscribed, 1 means subscribed to all comments, and 2 means only subscribed to replies of this comment.',
+          'size' => 'tiny',
+          'not null' => TRUE,
+          'default' => 0,
+          'disp-width' => '11'),
+    ),
+    'primary key' => array('uid'),
+  );
+
+  return $schema;
+}

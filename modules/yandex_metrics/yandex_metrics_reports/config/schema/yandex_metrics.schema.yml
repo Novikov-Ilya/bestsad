@@ -1,0 +1,9 @@
+# Schema for the configuration file of the Yandex.Metrics Reports module.
+
+yandex_metrics_reports.settings:
+  type: mapping
+  label: 'Yandex.Metrics Reports settings'
+  mapping:
+    popular_content_date_period:
+      type: string
+      label: 'Popular content date period'

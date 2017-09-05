@@ -1,0 +1,42 @@
+yandex_metrics_reports.authorization:
+  path: '/admin/config/system/yandex_metrics/authorization'
+  defaults:
+    _controller: 'Drupal\yandex_metrics_reports\Controller\YandexMetricsReportsController::authorizationRedirect'
+  requirements:
+    _permission: 'administer site configuration'
+
+yandex_metrics_reports.oauth_callback:
+  path: '/yandex_metrics/oauth'
+  defaults:
+    _controller: 'Drupal\yandex_metrics_reports\Controller\YandexMetricsReportsController::oauthCalbackRedirect'
+  requirements:
+    _permission: 'administer site configuration'
+
+yandex_metrics_reports.reports:
+  path: '/admin/config/system/yandex_metrics/reports'
+  defaults:
+    _form: '\Drupal\yandex_metrics_reports\Form\YandexMetricsReportsSettingsForm'
+  requirements:
+    _permission: 'administer Yandex.Metrics settings'
+
+yandex_metrics_reports.cron:
+  path: '/admin/config/system/yandex_metrics/cron'
+  defaults:
+    _form: '\Drupal\yandex_metrics_reports\Form\YandexMetricsReportsCronForm'
+  requirements:
+    _permission: 'administer Yandex.Metrics settings'
+
+yandex_metrics_reports.summary:
+  path: 'admin/reports/yandex_metrics_summary/{filter}'
+  defaults:
+    _content: '\Drupal\yandex_metrics_reports\Controller\YandexMetricsReportsController::report'
+    filter: 'week'
+  requirements:
+    _permission: 'access Yandex.Metrics report'
+
+yandex_metrics_reports.ajax:
+  path: 'admin/yandex_metrics_ajax/{counter_id}/{filter}/{type}'
+  defaults:
+    _controller: '\Drupal\yandex_metrics_reports\Controller\YandexMetricsReportsController::ajax'
+  requirements:
+    _permission: 'access Yandex.Metrics report'

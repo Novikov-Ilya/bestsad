@@ -1,0 +1,27 @@
+name: Busy
+type: theme
+description: 'The ultimate Drupal business theme.'
+core: 8.x
+
+stylesheets:
+  all:
+    - css/style.css
+  print:
+    - css/print.css
+
+regions:
+  header: Header
+  help: Help
+  page_top: 'Page top'
+  highlight: Highlight
+  header_top_right: Header top right
+  header_left: Header left
+  header_right: Header right
+  content: Content
+  page_bottom: 'Page bottom'
+  sidebar_first: 'Sidebar first'
+  footer: Footer
+# @todo D8: Remove once themes have to be installed.
+settings:
+  shortcut_module_link: '0'
+    

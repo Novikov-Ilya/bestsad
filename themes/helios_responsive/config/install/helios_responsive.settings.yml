@@ -1,0 +1,4 @@
+# @todo There is no UI yet for configuring this, but the setting is included
+#   here, because ConfigImportUITest requires a non-empty helios_responsive.settings.yml
+#   file: https://drupal.org/node/2235901.
+helios_responsive_enable_banner_block: false

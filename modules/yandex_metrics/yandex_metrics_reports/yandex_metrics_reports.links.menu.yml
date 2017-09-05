@@ -1,0 +1,3 @@
+yandex_metrics_reports.summary:
+  title: 'Yandex.Metrics Summary Report'
+  route_name: yandex_metrics_reports.summary

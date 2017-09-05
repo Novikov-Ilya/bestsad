@@ -1,0 +1,5 @@
+# Schema for the configuration files of the thisis theme.
+
+thisis.settings:
+  type: theme_settings
+  label: 'thisis settings'

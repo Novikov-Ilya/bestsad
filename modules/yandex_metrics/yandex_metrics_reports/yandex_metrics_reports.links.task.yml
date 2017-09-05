@@ -1,0 +1,15 @@
+yandex_metrics_reports.authorization:
+  route_name: yandex_metrics_reports.authorization
+  base_route: yandex_metrics.default
+  title: 'Authorization'
+  weight: 2
+yandex_metrics_reports.reports:
+  route_name: yandex_metrics_reports.reports
+  base_route: yandex_metrics.default
+  title: 'Reports'
+  weight: 3
+yandex_metrics_reports.cron:
+  route_name: yandex_metrics_reports.cron
+  base_route: yandex_metrics.default
+  title: 'Cron'
+  weight: 4

@@ -1,0 +1,8 @@
+counter_code: ''
+visibility:
+  path:
+    visibility: '0'
+    pages: "admin\nadmin/*\nbatch\nnode/add*\nnode/*/*\nuser/*/*"
+  role:
+    visibility: '0'
+    roles: {  }

@@ -1,0 +1,150 @@
+// Drop menus
+// Standard CSS drop menus that will expand any nesting level.
+
+@mixin dropmenu($dropmenu-item-width: 12em, $dropmenu-arrows: true) {
+
+  .ms-dropmenu {
+
+    .rm-toggle {
+      @include visually-hidden;
+    }
+
+    .rm-block__content {
+
+      .menu__item {
+        text-align: center;
+        position: relative;
+
+        // Nested items.
+        &--expanded .menu__item {
+          text-align: $flow-from;
+        }
+      }
+
+      .menu__link {
+        position: relative;
+        @include output-rhythm(padding, $xx-small $large);
+
+        @if $dropmenu-arrows == true {
+          &:after {
+            font-family: $icon-font;
+            padding: 0 1px;
+            text-align: $flow-to;
+            position: absolute;
+            @include output-rhythm($flow-to, $medium);
+          }
+        }
+      }
+
+      .menu-level-1 {
+        position: relative;
+
+        > .menu__item {
+          &:first-child {}
+          &:last-child {}
+
+          .menu__link {
+            &:hover,
+            &:focus {}
+          }
+        }
+
+        .menu__item {
+          float: $flow-from;
+          width: auto;
+
+          a:after {
+            content: '';
+            display: none;
+          }
+
+          @if $dropmenu-arrows == true {
+            // FontAwesome loaded.
+            .fa-loaded & {
+              &--collapsed > a,
+              &--expanded > a {
+                @include output-rhythm(padding-#{$flow-to}, $medium * 2.5);
+
+                &:after {
+                  display: inline-block;
+                }
+              }
+
+              &--expanded > a:after {
+                content: $menu-arrow-down;
+              }
+
+              &--collapsed > a:after {
+                content: '';
+              }
+            }
+          }
+
+          .menu {
+            display: none;
+            position: absolute;
+            margin: 0;
+            padding: 0;
+            transition: $global-transition;
+
+            .menu__item {
+              min-width: $dropmenu-item-width;
+              text-align: $flow-from;
+
+              &:hover,
+              &:focus {
+                font-family: inherit;
+              }
+            }
+          }
+
+          &:hover,
+          &:focus {
+            > .menu {
+              display: block;
+            }
+          }
+        }
+      }
+
+      .odd {
+        // Down
+        ul {
+          #{$flow-from}: 0; // LTR
+          top: auto;
+          //> li a {background-color: pink;}
+
+          @if $dropmenu-arrows == true {
+            // FontAwesome loaded.
+            .fa-loaded & {
+              > .menu__item--expanded > a:after {
+                content: $menu-arrow-right; // LTR In the down UL, li items with sub-menus have right pointing arrows.
+
+                [dir="rtl"] & {
+                  content: $menu-arrow-left;
+                }
+              }
+            }
+          }
+
+          // Accross
+          .odd {
+            #{$flow-from}: 100%; // LTR
+            top: 0;
+            //> li a {background-color: yellow;}
+
+            @if $dropmenu-arrows == true {
+              // FontAwesome loaded.
+              .fa-loaded & {
+                > .menu__item--expanded > a:after {
+                  content: $menu-arrow-down; // In the flyout UL, li items with sub-menus have down pointing arrows.
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

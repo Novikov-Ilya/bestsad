@@ -1,0 +1,25 @@
+name: 'Yandex.Metrics Reports'
+type: module
+description: 'Allows to authorise application and display reports.'
+package: Yandex.Metrics
+# version: VERSION
+# core: 8.x
+
+dependencies:
+  - yandex_metrics
+  - yandex_services_auth
+  - visualization
+  - views
+
+files:
+  - views/yandex_metrics_reports.views.inc
+  - views/handlers/views_handler_field_ym_title.inc
+  - yandex_metrics_reports.test
+
+configure: admin/config/system/yandex_metrics/authorization
+
+# Information added by Drupal.org packaging script on 2015-03-15
+version: '8.x-2.x-dev'
+core: '8.x'
+project: 'yandex_metrics'
+datestamp: 1426449492

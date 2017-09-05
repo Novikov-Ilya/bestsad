@@ -1,0 +1,5 @@
+; All the dates reported here are referred to UTC.
+
+yandex_metrics 8.x-2.x, xxxx-xx-xx
+#1986766 by konstantin.komelin: Ported Yandex.Metrics Counter from 7.x-2.x.
+#2144233 by kalabro, 6RUN0, konstantin.komelin: Fixed Data too long for column yandex_metrics_reports_popular_content.url.
