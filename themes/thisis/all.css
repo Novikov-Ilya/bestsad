@@ -3605,3 +3605,8 @@ div.view-content > div > article > div > div.field.field--name-field-foto.field-
   font-weight: bold;
   font-size: 1.071em;
 }
+
+footer > article > div > a > img {
+	width:auto;
+	height:auto;
+}
