@@ -3610,3 +3610,7 @@ footer > article > div > a > img {
 	width:auto;
 	height:auto;
 }
+
+div.field.field--name-field-image.field--type-image.field--label-hidden.field__items.quickedit-field > div > img {
+	height:auto;
+}
