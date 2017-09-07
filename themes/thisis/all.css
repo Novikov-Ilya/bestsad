@@ -129,7 +129,6 @@ blockquote > p:first-child {
 
 img {
   max-width: 100%;
-  height: auto;
 }
 
 ul,ol {
@@ -3604,4 +3603,9 @@ div.view-content > div > article > div > div.field.field--name-field-foto.field-
 #block-thisis-content > div > article > div > * > div.field__label {
   font-weight: bold;
   font-size: 1.071em;
+}
+
+footer > article > div > a > img {
+	height:auto;
+	width:auto;
 }
