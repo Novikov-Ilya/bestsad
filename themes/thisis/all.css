@@ -3471,7 +3471,6 @@ div.tabs {
 
 body {
   color: #000000;
-  background: #0851ff;
 }
 
 #page,#main-wrapper,.region-primary-menu .menu-item a.is-active,.region-primary-menu .menu-item--active-trail a {
@@ -3604,4 +3603,17 @@ div.view-content > div > article > div > div.field.field--name-field-foto.field-
 #block-thisis-content > div > article > div > * > div.field__label {
   font-weight: bold;
   font-size: 1.071em;
+}
+
+footer > article > div > a > img {
+	width:auto;
+	height:auto;
+}
+
+div.field.field--name-field-image.field--type-image.field--label-hidden.field__items.quickedit-field > div > img {
+	height:auto;
+}
+
+.image-style-thumbnail {
+	height: 62px;
 }
