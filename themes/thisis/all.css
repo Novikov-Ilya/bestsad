@@ -3617,10 +3617,14 @@ div.field.field--name-field-image.field--type-image.field--label-hidden.field__i
 	height: 62px;
 }
 
+.form-search, #edit-name, #edit-pass {
+	width: 85%;
+}
+
 .ya-share2__link {
 	border-bottom: none;
 }
 
-.form-search, #edit-name, #edit-pass {
-	width: 85%;
+.ya-share2__link:hover {
+	border-bottom-style: none !important;
 }
