@@ -3621,3 +3621,7 @@ div.field.field--name-field-image.field--type-image.field--label-hidden.field__i
 .ya-share2__link {
 	border-bottom: none;
 }
+
+.form-search, #edit-name, #edit-pass {
+	width: 85%;
+}
