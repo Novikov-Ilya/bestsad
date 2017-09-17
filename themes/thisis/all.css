@@ -3606,9 +3606,12 @@ div.view-content > div > article > div > div.field.field--name-field-foto.field-
 
 footer > article > div > a > img {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	height:auto;
 	width:auto;
 =======
+=======
+>>>>>>> test
 	width:auto;
 	height:auto;
 }
@@ -3627,5 +3630,8 @@ div.field.field--name-field-image.field--type-image.field--label-hidden.field__i
 
 .form-search, #edit-name, #edit-pass {
 	width: 85%;
+<<<<<<< HEAD
+>>>>>>> test
+=======
 >>>>>>> test
 }
