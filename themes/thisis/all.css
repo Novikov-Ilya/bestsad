@@ -3628,3 +3628,7 @@ div.field.field--name-field-image.field--type-image.field--label-hidden.field__i
 .ya-share2__link:hover {
 	border-bottom-style: none !important;
 }
+
+.form_start_advert {
+	text-align: center;
+}
