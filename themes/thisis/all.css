@@ -1706,6 +1706,7 @@ input.form-submit:hover,input.form-submit:focus {
 
 #edit-actions input {
   margin-right: 0.6em;
+  font-weight: bold;
 }
 
 [dir="rtl"] #edit-actions input {
