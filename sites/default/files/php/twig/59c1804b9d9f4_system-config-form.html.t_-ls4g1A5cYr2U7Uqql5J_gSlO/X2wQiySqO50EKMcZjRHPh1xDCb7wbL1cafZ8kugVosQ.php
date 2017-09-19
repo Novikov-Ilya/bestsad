@@ -1,7 +1,7 @@
 <?php
 
-/* core/themes/classy/templates/form/form.html.twig */
-class __TwigTemplate_3cdbc1ea7540848ff2676415aaa899ed57e859a29c0d012322ed929cc4aa2784 extends Twig_Template
+/* core/themes/stable/templates/admin/system-config-form.html.twig */
+class __TwigTemplate_d599921ad12bb2d6bb7fea4ca67060807c1a319eba1f85f5c8684d477a4a7ce4 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
     {
@@ -39,21 +39,15 @@ class __TwigTemplate_3cdbc1ea7540848ff2676415aaa899ed57e859a29c0d012322ed929cc4a
             throw $e;
         }
 
-        // line 13
-        echo "<form";
-        echo $this->env->getExtension('sandbox')->ensureToStringAllowed($this->env->getExtension('drupal_core')->escapeFilter($this->env, (isset($context["attributes"]) ? $context["attributes"] : null), "html", null, true));
-        echo ">
-  ";
-        // line 14
-        echo $this->env->getExtension('sandbox')->ensureToStringAllowed($this->env->getExtension('drupal_core')->escapeFilter($this->env, (isset($context["children"]) ? $context["children"] : null), "html", null, true));
+        // line 15
+        echo $this->env->getExtension('sandbox')->ensureToStringAllowed($this->env->getExtension('drupal_core')->escapeFilter($this->env, (isset($context["form"]) ? $context["form"] : null), "html", null, true));
         echo "
-</form>
 ";
     }
 
     public function getTemplateName()
     {
-        return "core/themes/classy/templates/form/form.html.twig";
+        return "core/themes/stable/templates/admin/system-config-form.html.twig";
     }
 
     public function isTraitable()
@@ -63,7 +57,7 @@ class __TwigTemplate_3cdbc1ea7540848ff2676415aaa899ed57e859a29c0d012322ed929cc4a
 
     public function getDebugInfo()
     {
-        return array (  48 => 14,  43 => 13,);
+        return array (  43 => 15,);
     }
 
     public function getSource()
@@ -71,18 +65,18 @@ class __TwigTemplate_3cdbc1ea7540848ff2676415aaa899ed57e859a29c0d012322ed929cc4a
         return "{#
 /**
  * @file
- * Theme override for a 'form' element.
+ * Theme override for a system settings form.
  *
- * Available variables
- * - attributes: A list of HTML attributes for the wrapper element.
- * - children: The child elements of the form.
+ * This template will be used when a system config form specifies 'config_form'
+ * as its #theme callback.  Otherwise, by default, system config forms will be
+ * themed by form.html.twig. This does not alter the appearance of a form at all,
+ * but is provided as a convenience for themers.
  *
- * @see template_preprocess_form()
+ * Available variables:
+ * - form: The confirm form.
  */
 #}
-<form{{ attributes }}>
-  {{ children }}
-</form>
+{{ form }}
 ";
     }
 }
