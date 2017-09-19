@@ -4,23 +4,23 @@ function redirect_adv() {
 var val_1 = document.getElementById('type_of_advert').value;
 
 switch (val_1) {
-	case "wear":
+	case "Аксесуары":
 	window.location.href = "/";
 	break;
 
-	case "diapers":
+	case "Подгузники":
 	window.location.href = "/about";
 	break;
 
-	case "toys":
+	case "Игрушки":
 	window.location.href = "/";
 	break;
 
-	case "buggy":
+	case "Коляски":
 	window.location.href = "/";
 	break;
 
-	case "other":
+	case "Прочее":
 	window.location.href = "/";
 	break;
 	}
