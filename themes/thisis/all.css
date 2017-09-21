@@ -2732,6 +2732,7 @@ body:not(:target) .region-primary-menu .menu-toggle-target-show:target ~ .menu .
   text-shadow: 0 1px 0 #fff;
   font-size: 1.071em;
   line-height: 1.2;
+  font-weight: bold;
 }
 
 .sidebar .block .content {
@@ -3411,7 +3412,7 @@ div.tabs {
   cursor: pointer;
   font-family: "Lucida Grande","Lucida Sans Unicode",Verdana,sans-serif;
   font-size: 0.929em;
-  font-weight: normal;
+  font-weight: bold;
   text-align: center;
   padding: 0.250em 1.063em;
   border-radius: 1em;
@@ -3627,6 +3628,10 @@ div.field.field--name-field-image.field--type-image.field--label-hidden.field__i
 }
 
 .ya-share2__link:hover {
+	border-bottom-style: none !important;
+}
+
+.ya-share2__link:focus {
 	border-bottom-style: none !important;
 }
 
