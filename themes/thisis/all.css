@@ -3606,11 +3606,6 @@ div.view-content > div > article > div > div.field.field--name-field-foto.field-
   font-size: 1.071em;
 }
 
-footer > article > div > a > img {
-	height:auto;
-	width:auto;
-}
-
 div.field.field--name-field-image.field--type-image.field--label-hidden.field__items.quickedit-field > div > img {
 	height:auto;
 }
@@ -3637,4 +3632,9 @@ div.field.field--name-field-image.field--type-image.field--label-hidden.field__i
 
 .form_start_advert {
 	text-align: center;
+}
+
+article > div > a > img {
+	height:auto !important;
+	width:auto;
 }
