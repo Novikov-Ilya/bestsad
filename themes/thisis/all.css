@@ -1527,7 +1527,7 @@ input.form-text,input.form-tel,input.form-email,input.form-url,input.form-search
 }
 
 input.form-submit:hover,input.form-submit:focus {
-  background: #dedede;
+  background-image: linear-gradient(to bottom,#C3E4FC,#FFFFFF);
 }
 
 .password-suggestions ul li {
@@ -3402,8 +3402,8 @@ div.tabs {
 
 .button {
   background-color: #fff;
-  background-image: -webkit-linear-gradient(top,#f3f3f3,#e8e8e8);
-  background-image: linear-gradient(to bottom,#f3f3f3,#e8e8e8);
+  background-image: -webkit-linear-gradient(top,#FFFFFF,#C3E4FC);
+  background-image: linear-gradient(to bottom,#FFFFFF,#C3E4FC);
   border: 1px solid #e4e4e4;
   border-bottom-color: #b4b4b4;
   border-left-color: #d2d2d2;
@@ -3421,9 +3421,9 @@ div.tabs {
 }
 
 .button:hover,.button:active,.button:focus {
-  background: #dedede;
   color: #5a5a5a;
   text-decoration: none;
+  background-image: linear-gradient(to bottom,#C3E4FC,#FFFFFF);
 }
 
 .button.is-disabled:hover,.button.is-disabled:active,.button.is-disabled:focus,.button.is-disabled {
