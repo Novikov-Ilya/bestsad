@@ -12,12 +12,10 @@ body {
 
 a,a.link {
   text-decoration: none;
-  border-bottom: 1px dotted;
 }
 
 a:hover,a:active,a:focus,.link:hover,.link:active,.link:focus {
   text-decoration: none;
-  border-bottom-style: solid;
 }
 
 .link {
@@ -3615,7 +3613,7 @@ div.field.field--name-field-image.field--type-image.field--label-hidden.field__i
 }
 
 .form-search, #edit-name, #edit-pass {
-	width: 85%;
+	width: 75%;
 }
 
 .ya-share2__link {
