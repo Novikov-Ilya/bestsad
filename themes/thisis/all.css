@@ -3642,7 +3642,7 @@ article > div > a > img {
 	width: 100%;
 }
 
-@media only screen and (orientation: portrait) and (max-width: 1080px) {
+/*@media only screen and (orientation: portrait) and (max-width: 1080px) {
   div.field.field--name-field-image.field--type-image.field--label-hidden.field__items.quickedit-field > div > a > img {
     width: 100%;
   }
@@ -3654,4 +3654,4 @@ article > div > a > img {
   div.field.field--name-field-foto.field--type-image.field--label-hidden.field__item.quickedit-field > a > img {
     width: 100%;
   }
-}
+}*/
